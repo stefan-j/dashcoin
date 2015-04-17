@@ -53,7 +53,7 @@ const size_t   DIFFICULTY_CUT                                = 60;  // timestamp
 const size_t   DIFFICULTY_LAG                                = 15;  // !!!
 static_assert(2 * DIFFICULTY_CUT <= DIFFICULTY_WINDOW - 2, "Bad DIFFICULTY_WINDOW or DIFFICULTY_CUT");
 
-const size_t   MAX_BLOCK_SIZE_INITIAL       = 25 * 1024;
+const size_t   MAX_BLOCK_SIZE_INITIAL                        = 25 * 1024;
 const uint64_t MAX_BLOCK_SIZE_GROWTH_SPEED_NUMERATOR         = 100 * 1024;
 const uint64_t MAX_BLOCK_SIZE_GROWTH_SPEED_DENOMINATOR       = 365 * 24 * 60 * 60 / DIFFICULTY_TARGET;
 
@@ -63,7 +63,7 @@ const uint64_t CRYPTONOTE_LOCKED_TX_ALLOWED_DELTA_SECONDS    = DIFFICULTY_TARGET
 const uint64_t CRYPTONOTE_MEMPOOL_TX_LIVETIME                = 60 * 60 * 24;     //seconds, one day
 const uint64_t CRYPTONOTE_MEMPOOL_TX_FROM_ALT_BLOCK_LIVETIME = 60 * 60 * 24 * 7; //seconds, one week
 
-const uint64_t UPGRADE_HEIGHT       = 91452;
+const uint64_t UPGRADE_HEIGHT                                = 91452;
 const unsigned UPGRADE_VOTING_THRESHOLD                      = 90;               // percent
 const size_t   UPGRADE_VOTING_WINDOW                         = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
 const size_t   UPGRADE_WINDOW                                = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
@@ -79,7 +79,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]       = "dashcoin";
+const char     CRYPTONOTE_NAME[]                             = "dashcoin";
 
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  1;
 const uint8_t  BLOCK_MAJOR_VERSION_1                         =  1;
@@ -91,8 +91,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  200;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT       = 29080;
-const int      RPC_DEFAULT_PORT       = 29081;
+const int      P2P_DEFAULT_PORT                              = 29080;
+const int      RPC_DEFAULT_PORT                              = 29081;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -105,23 +105,19 @@ const uint32_t P2P_DEFAULT_CONNECTION_TIMEOUT                = 5000;          //
 const uint32_t P2P_DEFAULT_PING_CONNECTION_TIMEOUT           = 2000;          // 2 seconds
 const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; // 2 minutes
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
-const char     P2P_STAT_TRUSTED_PUB_KEY[]       = "4d26c4df7f4ca7037950ad026f9ab36dd05d881952662992f2e4dcfcafbe57eb";
+const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "4d26c4df7f4ca7037950ad026f9ab36dd05d881952662992f2e4dcfcafbe57eb";
 const size_t   P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT     = 70;
 
 const unsigned THREAD_STACK_SIZE                             = 5 * 1024 * 1024;
 
-const char* const SEED_NODES[] = {
-  "162.243.247.45:29080", "146.185.191.90:29080", "104.131.132.129:29080", "128.199.146.243:29080"
-};
+const char* const SEED_NODES[] = { "162.243.247.45:29080", "146.185.191.90:29080", "104.131.132.129:29080", "128.199.146.243:29080" };
 
 struct CheckpointData {
   uint64_t height;
   const char* blockId;
 };
 
-const CheckpointData CHECKPOINTS[] = {
-  {28000,  "70d2531151529ac00bf875281e15f51324934bc85e5733dcd92e1ccb1a665ff8"}, {40000, "c181ec9223a91fef8658c7aa364c093c41c28d250870ca1ed829bf74f0abf038"}, {55000, "5289fe9f2dce8f51441019b9fbc85c70ad85ff49a666ef0109f3269890c6af6d"}, {70000, "193e335f34b8b8f1fab3857111cb668c2720340e80176a25155071e573481acb"}, {87500, "cce8a035f34457ec1098ab41e5949cac3db00ebff3503e26f36bfa057543095a"}
-};
+const CheckpointData CHECKPOINTS[] = { {28000, "70d2531151529ac00bf875281e15f51324934bc85e5733dcd92e1ccb1a665ff8"}, {40000, "c181ec9223a91fef8658c7aa364c093c41c28d250870ca1ed829bf74f0abf038"}, {55000, "5289fe9f2dce8f51441019b9fbc85c70ad85ff49a666ef0109f3269890c6af6d"}, {70000, "193e335f34b8b8f1fab3857111cb668c2720340e80176a25155071e573481acb"}, {87500, "cce8a035f34457ec1098ab41e5949cac3db00ebff3503e26f36bfa057543095a"}, {91453, "ad46d069bb2726a9bc5962cda6b2108376c0b95c157da0f09ee32458f486d87f"} };
 } // cryptonote
 
 #define ALLOW_DEBUG_COMMANDS
