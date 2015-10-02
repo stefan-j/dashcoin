@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2014, The CryptoNote developers, The Bytecoin developers
+// Copyright (c) 2012-2015, The CryptoNote developers, The Bytecoin developers
 //
 // This file is part of Bytecoin.
 //
@@ -32,14 +32,11 @@ public:
   ~Timer();
   Timer& operator=(const Timer&) = delete;
   Timer& operator=(Timer&& other);
-  void start();
-  void stop();
-  void sleep(std::chrono::milliseconds duration);
+  void sleep(std::chrono::nanoseconds duration);
 
 private:
   Dispatcher* dispatcher;
   int timer;
-  bool stopped;
   void* context;
 };
 
